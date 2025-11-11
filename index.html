@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfólio Online - Desenvolvedor Full Stack especializado em criar experiências web modernas e performáticas">
+  <title>PORTFÓLIO Online - Caroline Braga</title>
+  <link rel="icon" href="https://public-frontend-cos.metadl.com/mgx/img/favicon.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+  <!-- Formas fluidas decorativas -->
+  <div class="fluid-shape-1"></div>
+  <div class="fluid-shape-2"></div>
+
+  <!-- Menu Hambúrguer (Mobile) -->
+  <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <!-- Sidebar Lateral Fixa com Glassmorphism -->
+  <aside class="sidebar" id="sidebar">
+    <nav class="sidebar-nav">
+      
+      <button class="nav-icon active" data-modal="home" aria-label="Home">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-svg">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+          <polyline points="9 22 9 12 15 12 15 22"></polyline>
+        </svg>
+        <span class="nav-text">Home</span>
+      </button>
+      
+      <button class="nav-icon" data-modal="skills" aria-label="Habilidades">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-svg">
+          <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+          <polyline points="2 17 12 22 22 17"></polyline>
+          <polyline points="2 12 12 17 22 12"></polyline>
+        </svg>
+        <span class="nav-text">Habilidades</span>
+      </button>
+      
+      <button class="nav-icon" data-modal="about" aria-label="Sobre Mim">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-svg">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+          <circle cx="12" cy="7" r="4"></circle>
+        </svg>
+        <span class="nav-text">Sobre Mim</span>
+      </button>
+      
+      <button class="nav-icon" data-modal="contact" aria-label="Contato">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-svg">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+          <polyline points="22 6 12 13 2 6"></polyline>
+        </svg>
+        <span class="nav-text">Contato</span>
+      </button>
+
+    </nav>
+  </aside>
+
+  <!-- Overlay dos Modais -->
+  <div class="modal-overlay" id="modalOverlay"></div>
+
+  <!-- Modal HOME -->
+  <div class="modal" id="homeModal">
+    <div class="modal-header">
+      <h2>Olá!</h2>
+      <button class="modal-close" aria-label="Fechar">
+        <span class="close-icon">×</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="home-content">
+        <h3 class="modal-title">Bem vindo ao meu hub..</h3>
+        <div class="stats-grid">
+          <div class="stat-box">
+            <span class="stat-number">+5</span>
+            <span class="stat-label">Projetos</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-number">2+</span>
+            <span class="stat-label">Anos</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-number">∞</span>
+            <span class="stat-label">Foco</span>
+          </div>
+        </div>
+        <div class="cta-buttons">
+          <button class="btn-primary" data-navigate="projects">Ver Projetos</button>
+          <button class="btn-secondary" data-navigate="contact">Contato</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ <!-- Modal HABILIDADES -->
+<div class="modal" id="skillsModal">
+  <div class="modal-header">
+    <h2>HABILIDADES</h2>
+    <button class="modal-close" aria-label="Fechar">
+      <span class="close-icon">×</span>
+    </button>
+  </div>
+
+  <div class="modal-body">
+    <div class="skills-grid">
+
+      <div class="skill-card">
+        <div class="skill-icon">⚛️</div>
+        <h3>React</h3>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-icon">🌀</div>
+        <h3>TypeScript</h3>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-icon">🟢</div>
+        <h3>Node.js</h3>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-icon">🐘</div>
+        <h3>PostgreSQL</h3>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-icon">🐳</div>
+        <h3>Docker</h3>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-icon">☁️</div>
+        <h3>AWS</h3>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-icon">💛</div>
+        <h3>JavaScript</h3>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-icon">🎨</div>
+        <h3>HTML & CSS</h3>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Modal SOBRE MIM -->
+<div class="modal" id="aboutModal">
+  <div class="modal-header">
+      <h2>SOBRE MIM</h2>
+      <button class="modal-close" aria-label="Fechar">
+        <span class="close-icon">×</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="about-content">
+        <div class="about-image">
+          <div class="avatar-frame">
+            <img src="perfil.jpeg" alt="Avatar Caroline Braga">
+          </div>
+        </div>
+        <div class="about-text">
+          <h3>Desenvolvedora Full Stack Jr</h3>
+          <p>Desenvolvo aplicações web com foco em performance e experiência do usuário, usando React, TypeScript e Node.js.
+            Crio desde interfaces modernas e interativas até back-ends escaláveis, integrando APIs RESTful, automações e soluções personalizadas
+          </p>
+          <p>Já trabalhei em projetos que vão de landing pages e jogos acadêmicos a aplicações corporativas com IA generativa, voltadas à otimização de rotinas e automação inteligente de processos</p>
+          <div class="about-tags">
+            <span class="tag">Full Stack</span>
+            <span class="tag">Inovação</span>
+            <span class="tag">Performance</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Seção PROJETOS -->
+  <section class="main-content" id="projectsSection">
+    <header class="main-header">
+      <h2>PROJETOS</h2>
+    </header>
+
+    <div class="main-body">
+  <div class="projects-grid">
+
+    <!-- Projeto 1 -->
+    <div class="project-card">
+      <div class="project-image">
+        <img src="src/bunnygame.png" alt="Bunny Game">
+        <div class="project-overlay">
+          <span class="project-status">✓ Concluído</span>
+        </div>
+      </div>
+      <div class="project-info">
+        <h3>Bunny Game</h3>
+        <p>Projeto acadêmico desenvolvido na faculdade, cujo objetivo era transformar coelhos tristes em felizes, explorando conceitos de lógica de jogos, design interativo e UX.</p>
+        <div class="tech-stack">
+          <span class="tech-tag">React</span>
+          <span class="tech-tag">Node.js</span>
+          <span class="tech-tag">JavaScript</span>
+          <span class="tech-tag">CSS3</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/CarolBPinheiro/Coelho-Jogo/blob/main/hug-bunny-game.html" target="_blank" class="btn-link">
+            <span>GitHub</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Projeto 2 -->
+    <div class="project-card">
+      <div class="project-image">
+        <img src="src/fluig.png" alt="Assistente Fluig">
+        <div class="project-overlay">
+          <span class="project-status">🔄 Em uso interno</span>
+        </div>
+      </div>
+      <div class="project-info">
+        <h3>Assistente Fluig</h3>
+        <p>Assistente virtual desenvolvido na plataforma Fluig, automatizando tarefas e integrando processos internos com IA e scripts em JavaScript.</p>
+        <div class="tech-stack">
+          <span class="tech-tag">Fluig</span>
+          <span class="tech-tag">JavaScript</span>
+          <span class="tech-tag">HTML5</span>
+          <span class="tech-tag">CSS3</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/CarolBPinheiro" target="_blank" class="btn-link">
+            <span>GitHub</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Projeto 3 -->
+    <div class="project-card">
+      <div class="project-image">
+        <img src="src/APIE.png" alt="API E-commerce">
+        <div class="project-overlay">
+          <span class="project-status">✓ Concluído</span>
+        </div>
+      </div>
+      <div class="project-info">
+        <h3>API RESTful para E-commerce</h3>
+        <p>Back-end completo para e-commerce com autenticação JWT, CRUD de produtos e integração com banco de dados MongoDB e AWS.</p>
+        <div class="tech-stack">
+          <span class="tech-tag">Node.js</span>
+          <span class="tech-tag">Express</span>
+          <span class="tech-tag">MongoDB</span>
+          <span class="tech-tag">AWS</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/CarolBPinheiro" target="_blank" class="btn-link">
+            <span>GitHub</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Projeto 4 -->
+    <div class="project-card">
+      <div class="project-image">
+        <img src="src/cubodigital.png" alt="Cubo Digital">
+        <div class="project-overlay">
+          <span class="project-status">✓ Concluído</span>
+        </div>
+      </div>
+      <div class="project-info">
+        <h3>Cubo Digital (3D)</h3>
+        <p>Versão online e interativa do cubo mágico, criada com Three.js e JavaScript, permitindo rotação e movimentação em 3D com física realista.</p>
+        <div class="tech-stack">
+          <span class="tech-tag">Three.js</span>
+          <span class="tech-tag">JavaScript</span>
+          <span class="tech-tag">HTML5</span>
+          <span class="tech-tag">CSS3</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/CarolBPinheiro/Cubo" target="_blank" class="btn-link">
+            <span>GitHub</span>
+          </a>
+          
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+        <!-- Outros projetos seguem o mesmo padrão -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal CONTATO -->
+<div class="modal" id="contactModal">
+  <div class="modal-header">
+    <h2>CONTATO</h2>
+    <button class="modal-close" aria-label="Fechar">
+      <span class="close-icon">×</span>
+    </button>
+  </div>
+
+  <div class="modal-body">
+    <div class="contact-content">
+
+      <!-- Informações -->
+<div class="contact-info">
+  <h3>Vamos conversar!</h3>
+  <p>Entre em contato para discutir projetos, oportunidades ou colaborações.</p>
+
+  <div class="contact-details">
+
+    <!-- LinkedIn -->
+    <div class="contact-item">
+      <img src="src/linkedin.png" alt="LinkedIn" class="contact-icon-img">
+      <div>
+        <strong>LinkedIn</strong>
+        <a href="https://www.linkedin.com/in/caroline-braga-perfil/" target="_blank">
+          linkedin.com/in/caroline-braga
+        </a>
+      </div>
+    </div>
+
+    <!-- GitHub -->
+    <div class="contact-item">
+      <img src="src/github.png" alt="GitHub" class="contact-icon-img">
+      <div>
+        <strong>GitHub</strong>
+        <a href="https://github.com/CarolBPinheiro" target="_blank">
+          github.com/CarolBPinheiro
+        </a>
+      </div>
+    </div>
+
+    <!-- WhatsApp (sem exibir número) -->
+    <div class="contact-item">
+      <img src="src/whatsapp_1806663.png" alt="WhatsApp" class="contact-icon-img">
+      <div>
+        <strong>WhatsApp</strong>
+        <a href="https://wa.me/5527992036413" target="_blank">
+          Enviar mensagem
+        </a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+      <!-- Formulário -->
+      <form class="contact-form" id="contactForm">
+        <div class="form-group">
+          <label for="name">Nome</label>
+          <input type="text" id="name" placeholder="Seu nome" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="seuemail@exemplo.com" required>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Mensagem</label>
+          <textarea id="message" rows="5" placeholder="Sua mensagem..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit">ENVIAR MENSAGEM</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+  <script data-cfasync="false" src="https://cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
